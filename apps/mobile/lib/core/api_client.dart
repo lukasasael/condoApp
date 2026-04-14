@@ -5,7 +5,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 class ApiClient {
   final String baseUrl;
 
-  ApiClient({this.baseUrl = 'http://192.168.1.14:3000/api/v1'});
+  ApiClient({this.baseUrl = 'https://condoapp-api-ch1n.onrender.com/api/v1'});
 
   Future<Map<String, String>> _getHeaders() async {
     final prefs = await SharedPreferences.getInstance();
