@@ -6,7 +6,17 @@ O projeto é estruturado num formato **Monolítico Modular** (Monorepo), facilit
 
 **Stack:** TypeScript, React, Vite, Flutter, Dart, NestJS, Node.js, WebSockets, PostgreSQL, TypeORM, Redis (Pub/Sub), Docker, Passport (JWT), Turborepo, pnpm workspaces.
 
-🔗 **Documentação Viva da API (Swagger):** [Acesse as rotas do backend na Render](https://condoapp-api-ch1n.onrender.com/api/v1/docs)
+## 🌐 Deploy em Produção
+
+| Serviço | Plataforma | URL |
+|---|---|---|
+| 🌐 Frontend Web (Painel Admin + Portaria) | Vercel | [condo-app-pi-ruby.vercel.app/login](https://condo-app-pi-ruby.vercel.app/login) |
+| ⚙️ Backend API (NestJS) | Render | [condoapp-api-ch1n.onrender.com](https://condoapp-api-ch1n.onrender.com/api/v1) |
+| 📖 Documentação Viva da API (Swagger) | Render | [/api/v1/docs](https://condoapp-api-ch1n.onrender.com/api/v1/docs) |
+| 🗄️ Banco de Dados PostgreSQL | Supabase | Gerenciado em nuvem |
+| ⚡ Cache / Pub-Sub (Redis) | Upstash | Gerenciado em nuvem |
+
+> **Credenciais de demonstração:** `admin@condo.com` / `senha123` (Síndico) · `porteiro@condo.com` / `senha123` (Portaria)
 
 ---
 
