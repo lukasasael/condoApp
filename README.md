@@ -11,12 +11,57 @@ O projeto é estruturado num formato **Monolítico Modular** (Monorepo), facilit
 | Serviço | Plataforma | URL |
 |---|---|---|
 | 🌐 Frontend Web (Painel Admin + Portaria) | Vercel | [condo-app-pi-ruby.vercel.app/login](https://condo-app-pi-ruby.vercel.app/login) |
+| 📱 App do Morador (Flutter Web) | Vercel | [condo-app-mobile.vercel.app](https://condo-app-mobile.vercel.app) |
 | ⚙️ Backend API (NestJS) | Render | [condoapp-api-ch1n.onrender.com](https://condoapp-api-ch1n.onrender.com/api/v1) |
 | 📖 Documentação Viva da API (Swagger) | Render | [/api/v1/docs](https://condoapp-api-ch1n.onrender.com/api/v1/docs) |
 | 🗄️ Banco de Dados PostgreSQL | Supabase | Gerenciado em nuvem |
 | ⚡ Cache / Pub-Sub (Redis) | Upstash | Gerenciado em nuvem |
 
-> **Credenciais de demonstração:** `admin@condo.com` / `senha123` (Síndico) · `porteiro@condo.com` / `senha123` (Portaria)
+> **Credenciais de demonstração:** `admin@condo.com` / `senha123` (Síndico) · `porteiro@condo.com` / `senha123` (Portaria) · `morador@condo.com` / `senha123` (Morador)
+
+---
+
+## 🧪 Roteiro de Demonstração (Fluxo End-to-End)
+
+Siga esse roteiro para ver a plataforma inteira funcionando em tempo real, do Mobile ao Web:
+
+### 📱 Etapa 1 — Morador (Flutter Web)
+> Acesse: [condo-app-mobile.vercel.app](https://condo-app-mobile.vercel.app) · Login: `morador@condo.com` / `senha123`
+
+1. Faça login como **Morador**.
+2. Vá em **"Minhas Reservas"** e crie uma nova reserva de área comum (ex: Churrasqueira).
+3. Vá em **"Visitantes"** e cadastre um visitante informando nome e data de visita.
+4. *(Bônus)* Vá em **"Comunicados"** — estará vazio por enquanto. Vamos mudar isso na Etapa 3!
+
+---
+
+### 🚪 Etapa 2 — Porteiro (Painel Web)
+> Acesse: [condo-app-pi-ruby.vercel.app/login](https://condo-app-pi-ruby.vercel.app/login) · Login: `porteiro@condo.com` / `senha123`
+
+1. Faça login como **Porteiro**.
+2. No painel de **Visitas Ativas**, verifique que o visitante cadastrado pelo Morador já aparece na fila de espera.
+3. Clique em **"Registrar Entrada"** para liberar o acesso do visitante — o status muda instantaneamente.
+
+---
+
+### 🏛️ Etapa 3 — Síndico / Administrador (Painel Web)
+> Acesse: [condo-app-pi-ruby.vercel.app/login](https://condo-app-pi-ruby.vercel.app/login) · Login: `admin@condo.com` / `senha123`
+
+1. Faça login como **Síndico**.
+2. Na aba **"Reservas"**, confirme que a reserva criada pelo Morador na Etapa 1 está visível.
+3. Na aba **"Ocorrências"**, veja as ocorrências abertas e clique em **"Resolver"** em alguma delas.
+4. Navegue até a aba **"Comunicados"** e clique em **"Novo Comunicado"**.
+5. Preencha um título e mensagem (ex: *"Manutenção da piscina nesta sexta"*) e publique.
+
+---
+
+### 📱 Etapa 4 — Retorno ao Morador (Flutter Web)
+> Volte para: [condo-app-mobile.vercel.app](https://condo-app-mobile.vercel.app)
+
+1. Ainda logado como **Morador**, navegue até a seção **"Comunicados"**.
+2. O comunicado publicado pelo Síndico na Etapa 3 **já estará visível**, sem precisar recarregar a página.
+
+> ✅ **Fluxo completo validado:** Morador → Portaria → Administração → Morador, todos integrados na mesma API e banco de dados em nuvem.
 
 ---
 
