@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import {
   BarChart2, AlertTriangle, CalendarCheck, Megaphone,
-  LogOut, CheckCircle2, Clock, Plus, RefreshCw, Building2, Bell, FileText
+  LogOut, CheckCircle2, Clock, Plus, RefreshCw, Building2, Bell
 } from 'lucide-react';
 import { getUser, logout } from '../../services/auth.service';
 import {

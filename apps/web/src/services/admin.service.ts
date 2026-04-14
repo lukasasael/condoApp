@@ -1,5 +1,5 @@
 import api from './api';
-import type { Ocorrencia } from './operations.service';
+// import type { Ocorrencia } from './operations.service';
 
 export interface Comunicado {
   id: string;
