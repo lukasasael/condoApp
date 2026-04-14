@@ -21,8 +21,10 @@ import { AuditInterceptor } from './core/interceptors/audit.interceptor';
       type: 'postgres',
       url: process.env.DATABASE_URL || 'postgresql://postgres:postgres@localhost:5432/condominio_db',
       autoLoadEntities: true,
-      synchronize: process.env.NODE_ENV !== 'production', // [AVISO]: Usado apenas no desenvolvimento! No futuro usaremos Migrations formais.
+      // Forçamos o sync true apenas para o MVP inicializar o banco na nuvem
+      synchronize: true, 
       logging: false,
+      ssl: process.env.NODE_ENV === 'production' ? { rejectUnauthorized: false } : false,
     }),
     IamModule,
     FacilitiesModule,
