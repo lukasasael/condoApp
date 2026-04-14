@@ -6,6 +6,8 @@ O projeto é estruturado num formato **Monolítico Modular** (Monorepo), facilit
 
 **Stack:** TypeScript, React, Vite, Flutter, Dart, NestJS, Node.js, WebSockets, PostgreSQL, TypeORM, Redis (Pub/Sub), Docker, Passport (JWT), Turborepo, pnpm workspaces.
 
+🔗 **Documentação Viva da API (Swagger):** [Acesse as rotas do backend na Render](https://condoapp-api-ch1n.onrender.com/api/v1/docs)
+
 ---
 
 ## 🤖 AI-Driven Development (Engenharia Guiada por IAs)
