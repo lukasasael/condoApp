@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: condoapp-api
+    env: node
+    plan: free
+    # Em monorepos com pnpm, configuramos o pnpm antes de dar o build global
+    buildCommand: "npm install -g pnpm && pnpm install && cd apps/api && pnpm run build"
+    # Rodamos o comando start diretamente do diretório
+    startCommand: "cd apps/api && pnpm run start:prod"
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DATABASE_URL
+        sync: false
+      - key: REDIS_URL
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true
